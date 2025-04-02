@@ -19,6 +19,7 @@
             text-align: center;
             padding: 2rem;
             position: relative;
+            overflow: hidden;
         }
         .header-overlay {
             position: absolute;
@@ -29,11 +30,85 @@
             background: linear-gradient(135deg, rgba(0,102,204,0.9) 0%, rgba(0,153,255,0.8) 100%);
             z-index: -1;
         }
+        /* Thiết kế mới cho tiêu đề chính */
+        .main-title-wrapper {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem auto;
+            max-width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            transform: translateY(0);
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+        /* Hiệu ứng chuyển động nhẹ nhàng */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: 1px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #ffffff, #e0e0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            z-index: 2;
+        }
+        /* Đường gạch trang trí */
+        .main-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffcc00;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        /* Thêm hiệu ứng ánh sáng */
+        .light-effect {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        .light-effect-1 {
+            top: -50px;
+            left: -50px;
+            animation: pulse 5s infinite alternate;
+        }
+        .light-effect-2 {
+            bottom: -50px;
+            right: -50px;
+            animation: pulse 7s infinite alternate-reverse;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.2; transform: scale(1); }
+            100% { opacity: 0.5; transform: scale(1.5); }
+        }
         .logo-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         .logo {
             width: 120px;
@@ -43,8 +118,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             margin-right: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.7);
         }
         .logo-text {
             font-size: 1.8rem;
@@ -277,15 +353,19 @@
                 <h2>Đổi Mới Công Nghệ & Chuyển Đổi Số</h2>
             </div>
         </div>
-        <h1>CÁCH MẠNG CÔNG NGHIỆP 4.0</h1>
-        <h2>Ứng Dụng Công Nghệ Mới tại TP.HCM</h2>
+        <div class="main-title-wrapper">
+            <div class="light-effect light-effect-1"></div>
+            <div class="light-effect light-effect-2"></div>
+            <h1 class="main-title">CÁCH MẠNG CÔNG NGHIỆP 4.0</h1>
+            <div class="subtitle">Ứng Dụng Công Nghệ Mới tại TP.HCM</div>
+        </div>
     </header>
 
     <div class="container">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=300&q=80" alt="Banner Công Nghiệp 4.0" class="banner-image" />
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&h=300" alt="Banner Công Nghiệp 4.0" class="banner-image" />
         
         <section class="intro">
-            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=250&h=180&q=80" alt="Công nghiệp 4.0" class="intro-image" />
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=250&h=180" alt="Công nghiệp 4.0" class="intro-image" />
             <h2>Giới Thiệu về Cách Mạng Công Nghiệp 4.0</h2>
             <p>Cách mạng Công nghiệp 4.0 là cuộc cách mạng công nghiệp lần thứ tư, được khởi xướng đầu tiên tại <strong>Đức</strong>. Đặc điểm nổi bật của cách mạng này là <span class="highlight">quy mô rất lớn, tốc độ lan truyền nhanh, thúc đẩy đột phá công nghệ</span> trong nhiều lĩnh vực.</p>
             <p>Cuộc cách mạng này đang tác động mạnh mẽ đến nhiều khía cạnh của cuộc sống, từ sản xuất công nghiệp đến y tế, giáo dục và các dịch vụ công. Đối với người lao động, Công nghiệp 4.0 giúp <span class="highlight">tăng cường sức khỏe và cải thiện môi trường làm việc</span> thông qua tự động hóa các công việc nguy hiểm và nặng nhọc.</p>
@@ -297,7 +377,7 @@
             <div class="tech-card">
                 <div class="tech-icon">🔧</div>
                 <h3>Công Nghệ Vật Lý/Hữu Hình</h3>
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=150&q=80" alt="Công nghệ Vật lý" class="tech-image" />
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=150" alt="Công nghệ Vật lý" class="tech-image" />
                 <ul>
                     <li>Phương tiện tự lái</li>
                     <li>Công nghệ in 3D</li>
@@ -309,7 +389,7 @@
             <div class="tech-card">
                 <div class="tech-icon">💻</div>
                 <h3>Công Nghệ Kỹ Thuật Số</h3>
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=150&q=80" alt="Công nghệ Kỹ thuật số" class="tech-image" />
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=150" alt="Công nghệ Kỹ thuật số" class="tech-image" />
                 <ul>
                     <li><strong>Internet vạn vật (IoT):</strong> TP.HCM ứng dụng trong giao thông, quản lý năng lượng, môi trường giúp cải thiện chất lượng không khí.</li>
                     <li><strong>Dữ liệu lớn (Big Data):</strong> Hiện nay TP.HCM đang phân tích dữ liệu và tối ưu hóa quản lý đô thị giảm thiểu ùn tắc và tai nạn giao thông.</li>
@@ -321,7 +401,7 @@
             <div class="tech-card">
                 <div class="tech-icon">🧬</div>
                 <h3>Công Nghệ Sinh Học</h3>
-                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=150&q=80" alt="Công nghệ Sinh học" class="tech-image" />
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=150" alt="Công nghệ Sinh học" class="tech-image" />
                 <ul>
                     <li><strong>Công nghệ gen:</strong>
                         <ul>
@@ -344,7 +424,7 @@
 
         <section class="quiz">
             <h2>Kiểm Tra Kiến Thức</h2>
-            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200&q=80" alt="Kiểm tra kiến thức" class="quiz-image" />
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=200" alt="Kiểm tra kiến thức" class="quiz-image" />
             
             <div class="quiz-score">Số câu đúng: <span id="score">0</span>/4</div>
             
